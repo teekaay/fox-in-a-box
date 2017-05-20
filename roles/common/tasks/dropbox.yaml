@@ -1,0 +1,5 @@
+---
+- name: DROPBOX | Install dropbox client
+  apt:
+    name: nautilus-dropbox
+  ignore_errors: yes

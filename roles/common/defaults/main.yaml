@@ -1,0 +1,10 @@
+---
+go_version: 1.8.1
+go_checksum: sha256:a579ab19d5237e263254f1eac5352efcf1d70b9dacadb6d6bb12b0911ede8994
+go_install_dir: /usr/local/go
+go_source_dir: ~/go
+r_studio_version: '1.0.143'
+r_studio_mirror: https://download1.rstudio.org
+r_studio_deb: /tmp/rstudio.deb
+r_studio_checksum: md5:75761eae209158d8415d562b3771fbec
+r_install_pkgs: false

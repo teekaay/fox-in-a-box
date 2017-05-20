@@ -1,0 +1,29 @@
+---
+- name: GO | Download tarball
+  get_url:
+    url: "https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz"
+    dest: /usr/local/src/go
+    checksum: "{{ go_checksum }}"
+
+- name: GO | Prepare install directory
+  shell: "mkdir -p {{ go_install_dir }}"
+
+- name: GO | Extract tarball
+  unarchive:
+    src: /usr/local/src/go
+    dest: "{{ go_install_dir }}"
+    copy: no
+
+- name: GO | Prepare working directories
+  shell: "mkdir -p {{ go_source_dir }}/{src,pkg,bin}"
+
+- name: GO | Add the go bin directory to PATH for all users
+  copy:
+    src: go-bin.sh
+    dest: /etc/profile.d
+
+- name: GO | Set GOPATH for all users
+  copy:
+    src: go-path.sh
+    dest: /etc/profile.d
+

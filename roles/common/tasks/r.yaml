@@ -1,0 +1,21 @@
+---
+- name: R | Install package
+  apt:
+    name: r-base
+
+- name: R | Download Rstudio
+  get_url:
+    src: "{{r_studio_mirror}}/rstudio-{{r_studio_version}}-amd64.deb"
+    dest: "{{r_studio_deb}}"
+    checksum: "{{r_studio_checksum}}"
+
+- name: R | Install R Studio from .deb
+  shell: "/usr/bin/gdebi --non-interactive {{r_studio_deb}}"
+
+- name: R | Install libraries
+  shell: Rscript -e 'install.packages("{{item}}", repos="http://cran.us.r-project.org")'
+  with_items:
+    - testthat
+    - devtools
+    - dplyr
+    - ggplot2

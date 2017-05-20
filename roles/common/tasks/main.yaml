@@ -1,0 +1,24 @@
+---
+- name: Install base packages
+  become: true
+  apt: name="{{item}}" state=present
+  with_items:
+      - curl
+      - tree
+      - zsh
+      - build-essential
+
+- name: Install dev tools
+  become: true
+  apt: name="{{item}}" state=present
+  with_items:
+      - make
+      - git
+      - shellcheck
+
+#- include: vim.yaml
+#- include: tex.yaml
+#- include: dropbox.yaml
+#- include: docker.yaml
+#- include: go.yaml
+#- include: r.yaml

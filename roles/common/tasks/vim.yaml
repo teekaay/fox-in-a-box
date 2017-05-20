@@ -1,0 +1,12 @@
+---
+- name: Install vim
+  apt: name="{{item}}" state=present
+  with_items:
+      - vim
+
+- name: Prepare .vim folder
+  shell: mkdir -p ~/.vim/{bundle}
+
+- name: Install Vundle
+  shell: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
