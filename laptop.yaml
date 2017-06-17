@@ -6,4 +6,5 @@
       - security
       - docker
       - nodejs
+      - golang
       - tex
