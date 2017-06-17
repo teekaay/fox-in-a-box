@@ -1,0 +1,39 @@
+---
+- name: Install additional packages
+  shell: apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+  become: true
+
+- name: Install Dependencies
+  apt: name="{{item}}" state=present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add GPG key
+  shell: "curl -fsSL {{ docker_gpg_key_url}} | sudo apt-key add -"
+  become: true
+
+- name: Add stable repository
+  shell: |
+      add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  become: true
+
+- name: Install docker
+  apt:
+    name: docker-ce
+    update_cache: yes
+  ignore_errors: yes
+
+- name: Create docker group
+  shell: groupadd docker
+  become: true
+
+- name: Add user to docker group
+  shell: usermod -aG docker $USER
+  become: true
+
+- name: Install Docker Compose
+  shell: "curl -L {{ docker_compose_url }}/{{ docker_compose_version }}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
+  become: true

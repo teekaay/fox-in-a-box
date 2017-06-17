@@ -3,4 +3,5 @@
   connection: local
   roles:
       - common
+      - docker
       - tex
