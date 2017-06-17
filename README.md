@@ -44,6 +44,7 @@ Possibly I will create a `staging` role that contains these new tools.
 
 * To create a new role, the script `bin/add-role` can be used like this: `./bin/add-role.sh <role_name>`. This
 creates the appropriate directories if the role does not already exist
+* Linting is available via `ansible-lint` (`pip install ansible-lint`). Use `make lint` to get tips for improvement
 
 ## Testing with Docker
 
