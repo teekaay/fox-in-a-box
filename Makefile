@@ -4,7 +4,7 @@ BUILD_FLAGS = --rm
 ENTRYPOINT = bin/bootstrap.sh
 
 docker-build:
-	docker build --rm $(BUILD_FLAGS) -t $(IMAGE_NAME) .
+	docker build $(BUILD_FLAGS) -t $(IMAGE_NAME) .
 
 docker-install: docker-build
 	docker run -t $(IMAGE_NAME) /bin/bash -c "./$(ENTRYPOINT)"
