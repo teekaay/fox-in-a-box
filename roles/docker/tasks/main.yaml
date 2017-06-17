@@ -1,6 +1,6 @@
 ---
 - name: Install additional packages
-  shell: apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+  shell: apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
   become: true
 
 - name: Install Dependencies

@@ -1,4 +1,8 @@
 ---
+- name: Update
+  apt:
+    update_cache: true
+
 - name: Install base packages
   apt: name="{{item}}" state=present
   with_items:
@@ -6,13 +10,15 @@
       - tree
       - zsh
       - build-essential
+      
+  ignore_errors: yes
 
 - name: Install dev tools
   apt: name="{{item}}" state=present
   with_items:
       - make
       - git
-      - shellcheck
+  ignore_errors: yes
 
 #- include: vim.yaml
 #- include: dropbox.yaml

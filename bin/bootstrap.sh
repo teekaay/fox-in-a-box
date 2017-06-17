@@ -8,6 +8,6 @@ if [ ! -f "${PLAYBOOK}" ]; then
     exit 1
 fi
 
-ansible-playbook -i "${HOST}" "${PLAYBOOK}" $@
+ansible-playbook -i "${HOST}" "${PLAYBOOK}" -vvv $@
 
 cat after-install.txt
