@@ -1,0 +1,10 @@
+ipython
+numpy
+scipy
+scikit-learn
+pandas
+jupyter
+matplotlib
+seaborn
+requests
+nose

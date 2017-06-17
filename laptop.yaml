@@ -7,4 +7,5 @@
       - docker
       - nodejs
       - golang
+      - python
       - tex

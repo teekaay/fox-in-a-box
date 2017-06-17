@@ -1,0 +1,2 @@
+python_global_req_file: $HOME/requirements-global.txt
+python_pyenv_loc: $HOME/.pyenv
