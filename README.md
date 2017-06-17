@@ -33,6 +33,7 @@ of tools that do not belong to a specific group. All new tools go here first.
 - [TESTED] `security`: Installs Keepass2 and pass 
 - [TESTED] `nodejs`: Installs nodejs (currently version 7)
 - [UNTESTED] `golang`: Installs golang (currently version 1.8)
+- [UNTESTED] `python`: Installs python3, virtualenv, pyenv and several data science libraries globally (numpy, scipy, pandas etc)
 - [TESTED] `tex`: Installs TeXLive and Latexmk + configuration
 
 **Note** The `common` module will likely be marked UNTESTED for ever since it 
