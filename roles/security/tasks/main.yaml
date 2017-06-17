@@ -1,0 +1,14 @@
+---
+- name: Add KeePass PPA
+  apt_repository:
+    repo: 'ppa:jtaylor/keepass'
+    state: present
+
+- name: Install KeePass2
+  apt: 
+    name: keepass2
+    update_cache: true
+
+- name: Install Pass
+  apt:
+    name: pass
