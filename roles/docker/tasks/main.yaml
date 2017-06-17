@@ -16,9 +16,9 @@
   become: true
 
 - name: Add stable repository
-  shell: |
-      add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  become: true
+  apt_repository:
+      repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      state: present
 
 - name: Install docker
   apt:

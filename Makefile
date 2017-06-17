@@ -11,3 +11,6 @@ docker-install: docker-build
 
 docker-check: docker-build
 	docker run -t $(IMAGE_NAME) /bin/bash -c "./$(ENTRYPOINT) --check"
+
+lint:
+	ansible-lint laptop.yaml
