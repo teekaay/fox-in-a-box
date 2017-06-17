@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# ===== SYNOPSIS =========================
+# Send notifications when maven is ready
+#
+# Based on: https://gist.github.com/edalquist/1855660
+# ========================================
+
+$M2_HOME/bin/mvn $@
+RETCODE=$?
+BUILD_DIR=${PWD##*/}
+DURATION_MS=5000
+
+if [ $RETCODE -eq 0 ]
+then
+    notify-send -t $DURATION_MS --category=MAVEN,BUILD "$BUILD_DIR: Maven build successful"
+else
+    notify-send -t $DURATION_MS --category=MAVEN,BUILD "$BUILD_DIR: Maven build failed"
+fi
