@@ -1,0 +1,42 @@
+                    Things to do after installing everything
+
+[Note] This tasks _could_ be automated but I have not yet found the time
+       and maybe it is okay that they remain manual.
+
+1. Download Chrome
+
+Source: https://www.google.de/chrome/browser/desktop/index.html
+
+Download the deb and install it via software center.
+
+2. Setup Keepass and Pass
+
+Manual for pass: https://www.passwordstore.org
+Manual for keepass2:
+
+    1. Download your database (if existent)
+    2. Import it into keepass (type keepass2 into your terminal or open it via menu)
+    3. Setup backup of your database (via Cron or so)
+    4. Install chromeIPass (https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) and
+       the extension (https://github.com/pfn/keepasshttp). Follow the steps
+
+[Note] Steps 3 and 4 are on the agenda for automation
+
+3. Install VisualStudio Code
+
+Source: https://code.visualstudio.com/download
+
+Notable extensions:
+
+- ESLint
+- EditorConfig
+- Docker
+- Jinja
+- jsx
+- vscode-icons
+
+4. Install Intellij Idea
+
+Source: https://www.jetbrains.com/idea/download/#section=linux
+
+

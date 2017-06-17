@@ -9,3 +9,5 @@ if [ ! -f "${PLAYBOOK}" ]; then
 fi
 
 ansible-playbook -i "${HOST}" "${PLAYBOOK}" $@
+
+cat after-install.txt
