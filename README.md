@@ -34,6 +34,7 @@ of tools that do not belong to a specific group. All new tools go here first.
 - [TESTED] `nodejs`: Installs nodejs (currently version 7)
 - [UNTESTED] `golang`: Installs golang (currently version 1.8)
 - [UNTESTED] `python`: Installs python3, virtualenv, pyenv and several data science libraries globally (numpy, scipy, pandas etc)
+- [TESTED] `java8`: Installs Oracle Java8 and Maven
 - [TESTED] `tex`: Installs TeXLive and Latexmk + configuration
 
 **Note** The `common` module will likely be marked UNTESTED for ever since it 
