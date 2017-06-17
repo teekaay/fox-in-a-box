@@ -10,6 +10,7 @@
       - tree
       - zsh
       - build-essential
+      - jq
       
   ignore_errors: yes
 
