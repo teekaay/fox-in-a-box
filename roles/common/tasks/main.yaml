@@ -18,6 +18,5 @@
 
 #- include: vim.yaml
 #- include: dropbox.yaml
-#- include: docker.yaml
 #- include: go.yaml
 #- include: r.yaml
