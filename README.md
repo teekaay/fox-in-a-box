@@ -10,24 +10,39 @@ If you do not have an `ansible` installation, run
     ./bin/get-ansible.sh
 
 to install ansible and dependencies. After that, look into
-`roles/common/main.yaml` and uncomment all modules you want to install (they are
-all commented out by default except the essentials). Then run
+`laptop.yaml` and uncommont (append `#` to line beginning) all modules you do not want to install.
+Then run
 
+```sh
     ./bin/bootstrap.sh
+```
 
 to run the playbook.
 
 ## Modules
 
-All modules are in `roles/common/tasks`.
+There are multiple roles which can be used. Each role installs a certain
+group of software (e.g. some programming language and packages or groups like 
+security or development tools).
 
-- `go`: Golang [**UNTESTED**]
-- `r`: R and Rstudio [**UNTESTED**]
-- `nodejs`: Nodejs [**TESTED**]
-- `tex`: Latex setup with `TexLive` and `Latexmk` [**TESTED**]
-- `dropbox`: Dropbox client [**TESTED**]
-- `docker`: Docker (following the official guide) [**UNTESTED**]
-- `vim`: Vim installation with Vundle package manager [**TESTED**]
+The following roles are available:
+
+- [UNTESTED] `common`: Installs base tools (git, curl, tree, ...) and serves as a collection
+of tools that do not belong to a specific group. All new tools go here first.
+- [TESTED] `docker`: Installs docker and docker-compose
+- [TESTED] `security`: Installs Keepass2 and pass 
+- [TESTED] `nodejs`: Installs nodejs (currently version 7)
+- [UNTESTED] `golang`: Installs golang (currently version 1.8)
+- [TESTED] `tex`: Installs TeXLive and Latexmk + configuration
+
+**Note** The `common` module will likely be marked UNTESTED for ever since it 
+contains new tools that have not been verified to be installed correctly. 
+Possibly I will create a `staging` role that contains these new tools.
+
+## Tools
+
+* To create a new role, the script `bin/add-role` can be used like this: `./bin/add-role.sh <role_name>`. This
+creates the appropriate directories if the role does not already exist
 
 ## Testing with Docker
 
