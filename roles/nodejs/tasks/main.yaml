@@ -1,0 +1,9 @@
+---
+- name: Get Nodesource GPG key
+  shell: "curl -sL https://deb.nodesource.com/setup_{{ nodejs_version}}.x | sudo -E bash -"
+  become: true
+
+- name: Install Node.js
+  apt:
+      name: nodejs
+      update_cache: true
