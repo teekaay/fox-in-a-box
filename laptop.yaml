@@ -8,4 +8,5 @@
       - nodejs
       - golang
       - python
+      - java8
       - tex

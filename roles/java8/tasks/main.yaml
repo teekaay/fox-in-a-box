@@ -1,0 +1,21 @@
+---
+- name: Add JDK 8 repository
+  apt_repository:
+    repo: ppa:webupd8team/java
+    state: present
+
+- name: Accept licenses
+  shell:  |
+    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+    echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+  become: true
+
+- name: Install Java 8
+  apt:
+    name: oracle-java8-installer
+    update_cache: true
+  ignore_errors: yes
+
+- name: Install Maven
+  apt:
+    name: maven
