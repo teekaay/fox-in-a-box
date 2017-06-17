@@ -1,0 +1,40 @@
+# Latexmkrc file
+# Usage: latexmk <options> file.tex
+
+# Command line options:
+# -pdf: Generate pdf with pdflatex
+# -pv: Run file previewer
+# -pvc: Run file previewer and compile on changes
+# -C: Clean up
+
+# Biber
+$biber = 'biber %O %B';
+$bibtex_use = 2;
+
+# Makeindex
+$makeindex = 'makeindex %O -o %D %S';
+
+# Compiler configuration. Use pdflatex for better compatibility
+# and xelatex for more features
+#$pdflatex = 'pdflatex -interaction=nonstopmode --shell-escape %O %S';
+$pdflatex = 'xelatex -interaction=nonstopmode --shell-escape %O %S';
+
+# Config
+$pdf_mode = 2;
+$pdf_previewer = 'okular';
+$out_dir = '_build';
+
+add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
+add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
+
+sub run_makeglossaries {
+    if ( $silent  ) {
+        system "makeglossaries -q '$_[0]'";
+
+    }
+    else {
+        system "makeglossaries '$_[0]'";
+
+    };
+
+}

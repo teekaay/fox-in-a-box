@@ -17,7 +17,6 @@
       - shellcheck
 
 #- include: vim.yaml
-#- include: tex.yaml
 #- include: dropbox.yaml
 #- include: docker.yaml
 #- include: go.yaml

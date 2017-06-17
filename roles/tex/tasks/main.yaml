@@ -1,11 +1,16 @@
 ---
-- name: TEX | Install TexLive
+- name: Install TexLive
   apt: name="{{item}}" state=present
   with_items:
       - texlive
       - texlive-lang-german
       - texlive-latex-extra
 
-- name: TEX | Install Latexmk
+- name: Install Latexmk
   apt:
     name: latexmk
+
+- name: Configure Latemk
+  copy:
+    src: latexmkrc
+    dest: $HOME/.latexmkrc
