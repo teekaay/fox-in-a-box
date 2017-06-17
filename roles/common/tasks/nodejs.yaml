@@ -1,8 +1,0 @@
----
-- name: NODEJS | Get GPG key
-  shell: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-  become: true
-
-- name: NODEJS | Install
-  apt:
-      name: nodejs
