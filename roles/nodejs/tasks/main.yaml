@@ -7,3 +7,19 @@
   apt:
       name: nodejs
       update_cache: true
+
+- name: Get YARN GPG Key
+  shell: "curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -"
+  become: true
+
+- name: Add YARN to package sources
+  shell: "echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list"
+  become: true
+
+- name: Install YARN
+  apt:
+      name: yarn
+      update_cache: true
+
+
+
