@@ -19,3 +19,16 @@
     - devtools
     - dplyr
     - ggplot2
+    - data.table
+    - reshape2
+    - readr
+    - tidyr
+    - jsonlite
+    - jqr
+    - stringr
+    - purrr
+    - lintr
+    - knitr
+    - zoo
+    - xts
+    - roxygen
